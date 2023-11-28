@@ -8,13 +8,18 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import { SignInComponent } from './sign-in/sign-in.component';
+import {MatInputModule} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
 
 const appRoutes: Routes = [
-  {path: '', component: NavbarComponent},
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: 'signIn', component: SignInComponent },
   ]
 @NgModule({
   declarations: [
     AppComponent,
+
 
   ],
   imports: [
@@ -25,7 +30,10 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    NavbarComponent
+    NavbarComponent,
+    MatInputModule,
+    ReactiveFormsModule,
+    SignInComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

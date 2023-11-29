@@ -11,14 +11,17 @@ import {MatButtonModule} from "@angular/material/button";
 import { SignInComponent } from './sign-in/sign-in.component';
 import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'signIn', component: SignInComponent },
+  { path: 'signUp', component: SignUpComponent },
   ]
 @NgModule({
   declarations: [
     AppComponent,
+
 
 
   ],
@@ -34,6 +37,7 @@ const appRoutes: Routes = [
     MatInputModule,
     ReactiveFormsModule,
     SignInComponent,
+    SignUpComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,20 +12,28 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactComponent } from './contact/contact.component';
+import { RentalConditionsComponent } from './rental-conditions/rental-conditions.component';
+import {NgOptimizedImage} from "@angular/common";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'signIn', component: SignInComponent },
   { path: 'signUp', component: SignUpComponent },
+  { path: 'rental-conditions', component: RentalConditionsComponent },
+  { path: 'contact', component: ContactComponent},
+  { path: 'about-us', component:AboutUsComponent },
   ]
 @NgModule({
   declarations: [
     AppComponent,
-
-
+    ContactComponent,
+    RentalConditionsComponent,
 
   ],
   imports: [
+    AboutUsComponent,
     BrowserModule,
     MatSlideToggleModule,
     BrowserAnimationsModule,
@@ -38,6 +46,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     SignInComponent,
     SignUpComponent,
+    NgOptimizedImage,
   ],
   providers: [],
   bootstrap: [AppComponent]

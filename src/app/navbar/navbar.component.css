@@ -2,11 +2,19 @@
   margin-left: 20%;
 }
 .twoSpacer {
-  margin-left: 17%;
+  margin-left: 13%;
 }
 .threeSpacer{
-  margin-left: 17%;
+  margin-left: 13%;
 }
 span:hover{
   cursor: pointer;
 }
+.mat-toolbar.mat-primary{
+  color: black;
+  background: white;
+}
+.mat-mdc-button.mat-unthemed {
+  font-size: 15px;
+}
+

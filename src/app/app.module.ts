@@ -17,6 +17,7 @@ import { ContactComponent } from './contact/contact.component';
 import { RentalConditionsComponent } from './rental-conditions/rental-conditions.component';
 import {NgOptimizedImage} from "@angular/common";
 
+
 const appRoutes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'signIn', component: SignInComponent },

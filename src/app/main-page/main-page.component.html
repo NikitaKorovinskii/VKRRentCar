@@ -1,0 +1,16 @@
+<div class="cards-container">
+  <mat-card class="car-card" *ngFor="let car of visibleCars">
+    <mat-card-header>
+      <mat-card-title>{{car.name}}</mat-card-title>
+    </mat-card-header>
+    <img alt="image" ngSrc="assets/img/audi.png" height="100" width="200">
+    <mat-card-content>
+      <p>Мест: {{car.seats}}</p>
+      <p>Тип КПП: {{car.transmission}}</p>
+      <p>Цена: {{car.price}}$</p>
+    </mat-card-content>
+    <button mat-raised-button color="accent">Арендовать</button>
+  </mat-card>
+  <button  mat-raised-button color="accent" (click)="loadMore()">Показать ещё</button>
+</div>
+

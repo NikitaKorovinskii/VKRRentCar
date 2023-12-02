@@ -1,0 +1,15 @@
+.contact-component{
+  margin-top: 2%;
+}
+.heading{
+  text-align: center;
+}
+.contact{
+  display: flex;
+  margin-top: 5%;
+  margin-left: 20%;
+}
+.description{
+  margin-right: 10%;
+}
+

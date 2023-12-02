@@ -1,16 +1,33 @@
+.header-all-cars {
+  display: flex;
+  margin-left: 21%;
+  margin-right: 20%;
+  justify-content: space-between;
+}
 .cards-container {
   display: flex;
   flex-wrap: wrap;
-  width: 60%;
-  margin-left: 21%;
+  width: 50%;
+  margin: 0 25%; /* Add margin to the top, bottom, left, and right of the cards-container */
 }
 
 .car-card {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
+  width: 30%;
+  margin-top: 10px;
+  margin-right: 10px;
 }
+
 .mat-mdc-card-content {
   display: flex;
   justify-content: space-between;
+}
+
+.more-button {
+  margin-top: 1%;
+  margin-left: 43%;
+
+}
+p{
+  margin-top: 4px;
+
 }

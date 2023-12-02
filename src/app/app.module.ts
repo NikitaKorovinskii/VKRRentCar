@@ -16,8 +16,10 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 import { RentalConditionsComponent } from './rental-conditions/rental-conditions.component';
 import {NgOptimizedImage} from "@angular/common";
-import { MainPageComponent } from './main-page/main-page.component';
+import {MainPageComponent } from './main-page/main-page.component';
 import {MatCardModule} from "@angular/material/card";
+import {MatDialogModule} from "@angular/material/dialog";
+import { RentCarDialogComponent } from './rent-car-dialog/rent-car-dialog.component';
 
 
 const appRoutes: Routes = [
@@ -29,16 +31,20 @@ const appRoutes: Routes = [
   { path: 'main-page', component: MainPageComponent },
   { path: 'about-us', component:AboutUsComponent },
   ]
+
 @NgModule({
   declarations: [
     AppComponent,
     ContactComponent,
     RentalConditionsComponent,
-    MainPageComponent,
-
+    RentCarDialogComponent,
   ],
+entryComponents: [
+  RentCarDialogComponent
+],
   imports: [
     AboutUsComponent,
+    MainPageComponent,
     BrowserModule,
     MatSlideToggleModule,
     BrowserAnimationsModule,
@@ -53,6 +59,7 @@ const appRoutes: Routes = [
     SignUpComponent,
     NgOptimizedImage,
     MatCardModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

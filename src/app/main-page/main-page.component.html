@@ -1,16 +1,29 @@
-<div class="cards-container">
-  <mat-card class="car-card" *ngFor="let car of visibleCars">
-    <mat-card-header>
-      <mat-card-title>{{car.name}}</mat-card-title>
-    </mat-card-header>
-    <img alt="image" ngSrc="assets/img/audi.png" height="100" width="200">
-    <mat-card-content>
-      <p>Мест: {{car.seats}}</p>
-      <p>Тип КПП: {{car.transmission}}</p>
-      <p>Цена: {{car.price}}$</p>
-    </mat-card-content>
-    <button mat-raised-button color="accent">Арендовать</button>
-  </mat-card>
-  <button  mat-raised-button color="accent" (click)="loadMore()">Показать ещё</button>
+<div class="all-car">
+  <div class="header-all-cars">
+    <h2>Автомобили</h2>
+    <button mat-raised-button color="primary" (click)="loadAll()">{{allCars}}</button>
+  </div>
+  <div class="cards-container">
+    <mat-card class="car-card" *ngFor="let car of visibleCars">
+      <mat-card-header>
+        <mat-card-title>{{car.name}}</mat-card-title>
+      </mat-card-header>
+      <img alt="image" ngSrc="assets/img/car.png" height="100" width="150">
+      <mat-card-content>
+        <img width="25" height="25" ngSrc="https://img.icons8.com/ios/50/standing-man.png" alt="standing-man"/>
+        <p>{{car.seats}}</p>
+        <img width="25" height="25" ngSrc="https://img.icons8.com/windows/32/gearbox.png" alt="gearbox"/>
+        <p> {{car.transmission}}</p>
+        <img width="25" height="25" ngSrc="https://img.icons8.com/ios/50/average-2.png" alt="average-2"/>
+        <p>{{car.price}}$</p>
+      </mat-card-content>
+      <button mat-raised-button color="primary" (click)="openRentCarDialog()">Арендовать</button>
+    </mat-card>
+  </div>
+
+</div>
+
+<div class="more-button">
+  <button mat-raised-button color="primary" (click)="loadMore()" *ngIf="loadMoreButton">Показать ещё</button>
 </div>
 

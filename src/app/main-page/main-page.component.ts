@@ -1,11 +1,27 @@
 import { Component } from '@angular/core';
+import {
+  MatDialog,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogTitle,
+} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from "@angular/material/card";
+import {RentCarDialogComponent} from "../rent-car-dialog/rent-car-dialog.component";
+import {CommonModule, NgForOf, NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.css']
+  styleUrls: ['./main-page.component.css'],
+  standalone: true,
+  imports: [MatButtonModule, MatCardModule, NgOptimizedImage, NgForOf, CommonModule],
+
 })
 export class MainPageComponent {
+  constructor(public dialog: MatDialog){}
+
   cars = [
     {
       name: 'Toyota Camry',
@@ -168,13 +184,45 @@ export class MainPageComponent {
     },
   ];
 
-  visibleCars = this.cars.slice(0, 4);
+  visibleCars = this.cars.slice(0, 6);
+  loadMoreButton = true;
+  allCars: string = 'Показать все';
+  countAllCarsButton: number = 0;
 
-  loadMore() {
-    const loadCount = 4;
+
+  private loadVisibleCars(loadCount: number): void {
     const currentCount = this.visibleCars.length;
     const nextIndex = currentCount + loadCount;
     const nextCars = this.cars.slice(currentCount, nextIndex);
-    this.visibleCars.push(...nextCars);
+
+    if (nextCars.length === 0) {
+      this.loadMoreButton = false;
+      this.loadAll();
+    } else {
+      this.visibleCars.push(...nextCars);
+    }
+  }
+
+  loadMore() {
+    this.loadVisibleCars(6);
+  }
+
+  loadAll() {
+    this.visibleCars = this.cars;
+    this.countAllCarsButton++;
+    if (this.countAllCarsButton === 2) {
+      this.allCars = 'Показать все';
+      this.loadMoreButton = true;
+      this.countAllCarsButton = 0;
+      this.visibleCars = this.cars.slice(0, 6);
+    } else {
+      this.allCars = 'Свернуть';
+      this.loadMoreButton = false;
+    }
+  }
+
+  openRentCarDialog() {
+    this.dialog.open(RentCarDialogComponent);
   }
 }
+

@@ -17,4 +17,7 @@ span:hover{
 .mat-mdc-button.mat-unthemed {
   font-size: 15px;
 }
+.navBar{
+  background: white;
+}
 

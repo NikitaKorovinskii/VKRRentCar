@@ -16,6 +16,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 import { RentalConditionsComponent } from './rental-conditions/rental-conditions.component';
 import {NgOptimizedImage} from "@angular/common";
+import { MainPageComponent } from './main-page/main-page.component';
+import {MatCardModule} from "@angular/material/card";
 
 
 const appRoutes: Routes = [
@@ -24,6 +26,7 @@ const appRoutes: Routes = [
   { path: 'signUp', component: SignUpComponent },
   { path: 'rental-conditions', component: RentalConditionsComponent },
   { path: 'contact', component: ContactComponent},
+  { path: 'main-page', component: MainPageComponent },
   { path: 'about-us', component:AboutUsComponent },
   ]
 @NgModule({
@@ -31,6 +34,7 @@ const appRoutes: Routes = [
     AppComponent,
     ContactComponent,
     RentalConditionsComponent,
+    MainPageComponent,
 
   ],
   imports: [
@@ -48,6 +52,7 @@ const appRoutes: Routes = [
     SignInComponent,
     SignUpComponent,
     NgOptimizedImage,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

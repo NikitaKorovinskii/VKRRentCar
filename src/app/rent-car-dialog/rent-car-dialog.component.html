@@ -1,1 +1,24 @@
-<p>rent-car-dialog works!</p>
+<h2 mat-dialog-title>Подтвердите бронирование</h2>
+
+<mat-dialog-content >
+    <p>Автомобиль: {{selectedCar?.name}}</p>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Выберите даты аренды</mat-label>
+    <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+      <input matStartDate formControlName="start" placeholder="Начало">
+      <input matEndDate formControlName="end" placeholder="Конец">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+
+    <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+    <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+  </mat-form-field>
+  <p>Стоимость: {{totalPrice}}₽</p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button  mat-raised-button color="warn" (click)="cancel()">Отмена</button>
+  <button  mat-raised-button color="primary"(click)="confirm()">Подтвердить</button>
+</mat-dialog-actions>

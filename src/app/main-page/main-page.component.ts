@@ -1,10 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {
   MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogTitle,
+
 } from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from "@angular/material/card";
@@ -24,163 +21,149 @@ export class MainPageComponent {
 
   cars = [
     {
+      id: 1,
       name: 'Toyota Camry',
       seats: 5,
       transmission: 'Auto',
       price: 59.99
     },
     {
+      id: 2,
       name: 'Nissan Juke',
       seats: 5,
       transmission: 'Manual',
       price: 49.99
     },
     {
+      id: 3,
       name:  'Ford F150',
       seats: 6,
       transmission: 'Auto',
       price: 69.99
     },
     {
+      id: 4,
       name: 'Volkswagen Jetta',
       seats: 5,
       transmission: 'Auto',
       price: 39.99
     },
     {
+      id: 5,
       name: 'Dodge Charger',
       seats: 5,
       transmission: 'Auto',
       price: 79.99
     },
     {
+      id: 6,
       name: 'Honda Civic',
       seats: 5,
       transmission: 'Manual',
       price: 29.99
     },
     {
+      id: 7,
       name: 'Toyota RAV4',
       seats: 5,
       transmission: 'Auto',
       price: 49.99
     },
     {
+      id: 8,
       name: 'Tesla Model 3',
       seats: 5,
       transmission: 'Auto',
       price: 99.99
     },
     {
+      id: 9,
       name: 'Chevrolet Malibu',
       seats: 5,
       transmission: 'Auto',
       price: 69.99
     },
     {
+      id: 10,
       name: 'Ford Escape',
       seats: 5,
       transmission: 'Auto',
       price: 59.99
     },
     {
+      id: 11,
       name: 'Subaru Outback',
       seats: 5,
       transmission: 'Auto',
       price: 149.99
     },
     {
+      id: 12,
       name: 'Toyota RAV4',
       seats: 5,
       transmission: 'Auto',
       price: 49.99
     },
     {
+      id: 13,
       name: 'Tesla Model 3',
       seats: 5,
       transmission: 'Auto',
       price: 99.99
     },
     {
+      id: 14,
       name: 'Chevrolet Malibu',
       seats: 5,
       transmission: 'Auto',
       price: 69.99
     },
     {
+      id: 15,
       name: 'Ford Escape',
       seats: 5,
       transmission: 'Auto',
       price: 59.99
     }, {
+      id: 16,
       name: 'Toyota RAV4',
       seats: 5,
       transmission: 'Auto',
       price: 49.99
     },
     {
+      id: 17,
       name: 'Tesla Model 3',
       seats: 5,
       transmission: 'Auto',
       price: 99.99
     },
     {
+      id: 18,
       name: 'Chevrolet Malibu',
       seats: 5,
       transmission: 'Auto',
       price: 69.99
     },
     {
+      id: 19,
       name: 'Ford Escape',
       seats: 5,
       transmission: 'Auto',
       price: 59.99
     }, {
+      id: 20,
       name: 'Toyota RAV4',
       seats: 5,
       transmission: 'Auto',
       price: 49.99
     },
     {
+      id: 21,
       name: 'Tesla Model 3',
       seats: 5,
       transmission: 'Auto',
       price: 99.99
-    },
-    {
-      name: 'Chevrolet Malibu',
-      seats: 5,
-      transmission: 'Auto',
-      price: 69.99
-    },
-    {
-      name: 'Ford Escape',
-      seats: 5,
-      transmission: 'Auto',
-      price: 59.99
-    }, {
-      name: 'Toyota RAV4',
-      seats: 5,
-      transmission: 'Auto',
-      price: 49.99
-    },
-    {
-      name: 'Tesla Model 3',
-      seats: 5,
-      transmission: 'Auto',
-      price: 99.99
-    },
-    {
-      name: 'Chevrolet Malibu',
-      seats: 5,
-      transmission: 'Auto',
-      price: 69.99
-    },
-    {
-      name: 'Ford Escape',
-      seats: 5,
-      transmission: 'Auto',
-      price: 59.99
     },
   ];
 
@@ -221,8 +204,13 @@ export class MainPageComponent {
     }
   }
 
-  openRentCarDialog() {
-    this.dialog.open(RentCarDialogComponent);
+  openRentCarDialog(id: number) {
+    this.dialog.open(RentCarDialogComponent, {
+      data: {
+        carId: id
+      }
+    });
   }
+
 }
 

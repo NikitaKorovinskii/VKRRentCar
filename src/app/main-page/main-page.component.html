@@ -14,10 +14,10 @@
         <p>{{car.seats}}</p>
         <img width="25" height="25" ngSrc="https://img.icons8.com/windows/32/gearbox.png" alt="gearbox"/>
         <p> {{car.transmission}}</p>
-        <img width="25" height="25" ngSrc="https://img.icons8.com/ios/50/average-2.png" alt="average-2"/>
+        <img width="25" height="25" ngSrc="https://img.icons8.com/ios/50/ruble.png" alt="ruble"/>
         <p>{{car.price}}$</p>
       </mat-card-content>
-      <button mat-raised-button color="primary" (click)="openRentCarDialog()">Арендовать</button>
+      <button mat-raised-button color="primary" (click)="openRentCarDialog(car.id)">Арендовать</button>
     </mat-card>
   </div>
 

@@ -20,6 +20,9 @@ import {MainPageComponent } from './main-page/main-page.component';
 import {MatCardModule} from "@angular/material/card";
 import {MatDialogModule} from "@angular/material/dialog";
 import { RentCarDialogComponent } from './rent-car-dialog/rent-car-dialog.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MAT_DATE_FORMATS,MAT_DATE_LOCALE} from "@angular/material/core";
+import {CarService} from "./car.service";
 
 
 const appRoutes: Routes = [
@@ -37,12 +40,13 @@ const appRoutes: Routes = [
     AppComponent,
     ContactComponent,
     RentalConditionsComponent,
-    RentCarDialogComponent,
+
   ],
 entryComponents: [
   RentCarDialogComponent
 ],
   imports: [
+    RentCarDialogComponent,
     AboutUsComponent,
     MainPageComponent,
     BrowserModule,
@@ -59,9 +63,13 @@ entryComponents: [
     SignUpComponent,
     NgOptimizedImage,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_DATE_LOCALE,useValue: 'ru-RU',},
+    CarService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

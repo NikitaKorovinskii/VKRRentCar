@@ -1,9 +1,0 @@
-mat-dialog-actions{
-  display: flex;
-  justify-content: space-between;
-}
-.rentDialogWindow{
-  width: 500px;
-  height: 322px;
-  text-align: center;
-}

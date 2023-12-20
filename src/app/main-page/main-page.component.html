@@ -6,18 +6,18 @@
   <div class="cards-container">
     <mat-card class="car-card" *ngFor="let car of visibleCars">
       <mat-card-header>
-        <mat-card-title>{{car.NameBrand}} {{car.NameCar}}</mat-card-title>
+        <mat-card-title>{{car.name}}</mat-card-title>
       </mat-card-header>
       <img alt="image" ngSrc="assets/img/car.png" height="100" width="150">
       <mat-card-content>
         <img width="25" height="25" ngSrc="https://img.icons8.com/ios/50/standing-man.png" alt="standing-man"/>
-        <p>{{car.CountOfSeats}}</p>
+        <p>{{car.seats}}</p>
         <img width="25" height="25" ngSrc="https://img.icons8.com/windows/32/gearbox.png" alt="gearbox"/>
-        <p> {{car.TransmissionType}}</p>
-        <img width="25" height="25" ngSrc="https://img.icons8.com/ios/50/ruble.png" alt="ruble"/>
-        <p>{{car.PriceCarDay}} ₽</p>
+        <p> {{car.transmission}}</p>
+        <img width="25" height="25" ngSrc="https://img.icons8.com/ios/50/average-2.png" alt="average-2"/>
+        <p>{{car.price}}$</p>
       </mat-card-content>
-      <button mat-raised-button color="primary" (click)="openRentCarDialog(car.Id)">Арендовать</button>
+      <button mat-raised-button color="primary" (click)="openRentCarDialog()">Арендовать</button>
     </mat-card>
   </div>
 

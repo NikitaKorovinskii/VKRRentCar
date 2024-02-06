@@ -7,7 +7,7 @@ export class CarService {
   getCar() {
     return this.cars;
   }
-  addIdCar(car: any[]){
+  addCar(car: any[]){
     this.cars =car;
   }
 }

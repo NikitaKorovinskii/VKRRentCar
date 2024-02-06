@@ -6,7 +6,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
-import {JsonPipe, NgIf} from "@angular/common";
+import {JsonPipe, NgIf, NgOptimizedImage} from "@angular/common";
 import {CarService} from "../car.service";
 
 
@@ -25,7 +25,8 @@ import {CarService} from "../car.service";
     MatButtonModule,
     JsonPipe,
     ReactiveFormsModule,
-    NgIf
+    NgIf,
+    NgOptimizedImage
   ],
 })
 export class RentCarDialogComponent implements OnInit{

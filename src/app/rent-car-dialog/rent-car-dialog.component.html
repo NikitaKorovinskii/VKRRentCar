@@ -1,10 +1,10 @@
 <div class="rentDialogWindow">
-
   <h2 mat-dialog-title>Подтвердите бронирование</h2>
+
+  <img alt="image" ngSrc="assets/img/car.png" height="400" width="640">
 
   <mat-dialog-content >
     <p>Автомобиль: {{selectedCar?.NameBrand}} {{selectedCar?.NameCar}}</p>
-
     <mat-form-field appearance="fill">
       <mat-label>Выберите даты аренды</mat-label>
       <mat-date-range-input [formGroup]="range" [rangePicker]="picker">

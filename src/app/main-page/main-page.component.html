@@ -8,7 +8,7 @@
       <mat-card-header>
         <mat-card-title>{{car.NameBrand}} {{car.NameCar}}</mat-card-title>
       </mat-card-header>
-      <img alt="image" ngSrc="assets/img/car.png" height="100" width="150">
+      <img alt="image" [src]="car.ImgCar" height="100" width="150">
       <mat-card-content>
         <img width="25" height="25" ngSrc="https://img.icons8.com/ios/50/standing-man.png" alt="standing-man"/>
         <p>{{car.CountOfSeats}}</p>

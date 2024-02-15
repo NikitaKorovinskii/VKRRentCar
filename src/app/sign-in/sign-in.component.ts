@@ -21,6 +21,8 @@ export class SignInComponent  {
 
   public username = '';
   public password = '';
+  public errorIntputData = '';
+
 
 
   //todo Испрвить метод
@@ -38,11 +40,13 @@ export class SignInComponent  {
       })
       .catch(error => {
         if (error.response.status === 404) {
-          console.error('Пользователь не найден');
+          this.errorIntputData = 'Логин или пароль введены неверно';
         } else {
-          console.error('Ошибка при отправке запроса:', error.response.data);
+          this.errorIntputData = '';
         }
       });
 
   }
+
+
 }

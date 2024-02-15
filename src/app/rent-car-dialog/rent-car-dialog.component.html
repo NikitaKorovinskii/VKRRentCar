@@ -1,7 +1,7 @@
 <div class="rentDialogWindow">
   <h2 mat-dialog-title>Подтвердите бронирование</h2>
 
-  <img alt="image" ngSrc="assets/img/car.png" height="400" width="640">
+  <img alt="image" [src]="selectedCar?.ImgCar" height="300" width="400">
 
   <mat-dialog-content >
     <p>Автомобиль: {{selectedCar?.NameBrand}} {{selectedCar?.NameCar}}</p>

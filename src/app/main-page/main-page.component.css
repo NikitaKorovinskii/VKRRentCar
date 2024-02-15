@@ -29,5 +29,7 @@
 }
 p{
   margin-top: 4px;
-
+}
+mat-card.img {
+  margin-left: 210px;
 }

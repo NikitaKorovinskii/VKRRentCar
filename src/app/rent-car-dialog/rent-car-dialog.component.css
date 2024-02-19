@@ -1,6 +1,13 @@
 .rentDialogWindow{
-  width: 800px;
-  height: 800px;
+  display: inline;
 
 }
-
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+mat-dialog-actions{
+  display: flex;
+  justify-content: space-between;
+}

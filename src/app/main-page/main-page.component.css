@@ -1,35 +1,49 @@
 .header-all-cars {
   display: flex;
-  margin-left: 21%;
-  margin-right: 20%;
   justify-content: space-between;
+  align-items: center;
+}
+
+mat-card-footer {
+  display: flex;
+
+}
+mat-card-footer div{
+  margin-left: 20px;
+
 }
 .cards-container {
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
-  margin: 0 25%; /* Add margin to the top, bottom, left, and right of the cards-container */
+  margin: 0 25%;
 }
 
 .car-card {
-  width: 30%;
-  margin-top: 10px;
-  margin-right: 10px;
+  width: calc(50% - 20px);
+  margin: 10px;
 }
 
-.mat-mdc-card-content {
-  display: flex;
-  justify-content: space-between;
+mat-card.img {
+  margin-left: 210px;
 }
 
 .more-button {
-  margin-top: 1%;
-  margin-left: 43%;
-
+  margin: 10px auto 0;
 }
-p{
+
+p {
   margin-top: 4px;
 }
-mat-card.img {
-  margin-left: 210px;
+
+@media (max-width: 768px) {
+
+  .cards-container {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+
+  .car-card {
+    width: 100%;
+  }
 }

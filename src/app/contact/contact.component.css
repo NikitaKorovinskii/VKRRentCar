@@ -1,16 +1,20 @@
-.contact-component{
+h2{
+  display: flex;
+  justify-content: center;
   margin-top: 2%;
-
-}
-.heading{
-  text-align: center;
 }
 .contact{
   display: flex;
-  margin-top: 5%;
-  margin-left: 20%;
+  justify-content: center;
 }
 .description{
-  margin-right: 10%;
+  margin-right: 10px;
 }
+@media (max-width: 958px) {
+  .contact {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 
+  }
+}

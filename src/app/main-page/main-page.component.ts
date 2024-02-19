@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { MatDialog} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from "@angular/material/card";
@@ -30,7 +30,7 @@ export class MainPageComponent implements OnInit {
       .then((response) => {
         this.carService.addCar(response.data)
         this.cars = this.carService.getCar()
-        this.visibleCars = this.cars.slice(0, 6);
+        this.visibleCars = this.cars.slice(0, 4);
       })
       .catch((err: any) => {
         console.log(err)
@@ -60,7 +60,7 @@ export class MainPageComponent implements OnInit {
       this.allCars = 'Показать все';
       this.loadMoreButton = true;
       this.countAllCarsButton = 0;
-      this.visibleCars = this.cars.slice(0, 6);
+      this.visibleCars = this.cars.slice(0, 4);
     } else {
       this.allCars = 'Свернуть';
       this.loadMoreButton = false;

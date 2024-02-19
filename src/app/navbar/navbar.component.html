@@ -1,22 +1,19 @@
-<div class="navBar">
-  <mat-toolbar color="primary">
+ <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <span class="oneSpacer"></span>
-      <span routerLink="/">HOME</span>
-      <span class="twoSpacer"></span>
-      <div class="navigate">
+      <div class="logo">
+        <a mat-button routerLink="/">HOME</a>
+      </div>
+      <div class="links">
         <a mat-button routerLink="/main-page">Аренда авто</a>
         <a mat-button routerLink="/about-us">О нас</a>
         <a mat-button routerLink="/contact">Контакты</a>
         <a mat-button routerLink="/rental-conditions">Условия аренды</a>
       </div>
-      <span class="threeSpacer"></span>
-      <a mat-button routerLink="/signUp">Регистрация</a>
-      /
-      <a mat-button routerLink="/signIn">Вход</a>
+      <div class="auth">
+        <a mat-button routerLink="/signUp">Регистрация</a>
+        /
+        <a mat-button routerLink="/signIn">Вход</a>
+      </div>
     </mat-toolbar-row>
   </mat-toolbar>
-  <hr>
-</div>
-
 

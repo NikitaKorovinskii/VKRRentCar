@@ -1,23 +1,22 @@
-.oneSpacer{
-  margin-left: 20%;
+.mat-toolbar-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.twoSpacer {
-  margin-left: 13%;
+.logo a{
+  font-size: 20px;
+  margin-right: 20px;
 }
-.threeSpacer{
-  margin-left: 13%;
+@media (max-width: 768px) {
+  .mat-toolbar-row {
+    flex-direction: column;
+  }
+  .logo {
+    font-size: 16px;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
-span:hover{
-  cursor: pointer;
-}
-.mat-toolbar.mat-primary{
-  color: black;
-  background: white;
-}
-.mat-mdc-button.mat-unthemed {
-  font-size: 15px;
-}
-.navBar{
-  background: white;
-}
-

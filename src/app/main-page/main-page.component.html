@@ -1,37 +1,45 @@
-<div class="all-car">
-  <div class="header-all-cars">
-    <h2>Автомобили</h2>
-    <button mat-raised-button color="primary" (click)="loadAll()">{{allCars}}</button>
-  </div>
-  <div class="cards-container">
-    <mat-card class="car-card" *ngFor="let car of visibleCars">
-      <mat-card-header>
-        <mat-card-title>{{car.NameBrand}} {{car.NameCar}}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <img alt="image" [src]="car.ImgCar" height="150" width="200">
-      </mat-card-content>
-      <mat-card-footer>
-        <div style="display: flex">
-          <img width="25" height="25" ngSrc="https://img.icons8.com/ios/50/standing-man.png" alt="standing-man"/>
-          <p>{{car.CountOfSeats}}</p>
-        </div>
-        <div style="display: flex">
-        <img width="25" height="25" ngSrc="https://img.icons8.com/windows/32/gearbox.png" alt="gearbox"/>
-        <p> {{car.TransmissionType}}</p>
-        </div>
-        <div style="display: flex">
-        <img width="25" height="25" ngSrc="https://img.icons8.com/ios/50/ruble.png" alt="ruble"/>
-        <p>{{car.PriceCarDay}} ₽</p>
-        </div>
-      </mat-card-footer>
-      <button mat-raised-button color="primary" (click)="openRentCarDialog(car.Id)">Арендовать</button>
-    </mat-card>
-  </div>
-
+<div class="filter-container">
+  <h2>Фильтры</h2>
+  <form>
+    <label for="brand">Марка:</label>
+    <input type="text" id="brand" placeholder="Введите марку">
+    <label for="model">Модель:</label>
+    <input type="text" id="model" placeholder="Введите модель">
+    <label for="year">Год:</label>
+    <select id="year">
+      <option value="">Все</option>
+      <option value="2023">2023</option>
+      <option value="2022">2022</option>
+    </select>
+    <button type="submit">Применить фильтры</button>
+  </form>
 </div>
-
-<div class="more-button">
-  <button mat-raised-button color="primary" (click)="loadMore()" *ngIf="loadMoreButton">Показать ещё</button>
+<div class="car-container"> <mat-card class="car-card" *ngFor="let car of visibleCars">
+  <mat-card-header>
+    <mat-card-title>{{ car.NameBrand }} {{ car.NameCar }}</mat-card-title>
+    <h3>{{ car.ClassCar }}</h3>
+  </mat-card-header>
+  <mat-card-content>
+    <img alt="image" [src]="car.ImgCar" height="15" width="20">
+  </mat-card-content>
+  <mat-card-footer>
+    <div>
+      <img src="assets/img/user.png" width="24" height="24" alt="standing-man" />
+      <p>{{ car.CountOfSeats }}</p>
+    </div>
+    <div>
+      <img src="assets/img/kpp.png" width="24" height="24" alt="gearbox" />
+      <p>{{ car.TransmissionType }}</p>
+    </div>
+    <div>
+      <img src="assets/img/gas.png" width="24" height="24" alt="ruble" />
+      <p>{{ car.TankCapacity }}Л</p>
+    </div>
+  </mat-card-footer>
+  <div class="footerContainer">
+    <h2>{{car.PriceCarDay}} ₽ / день</h2>
+    <button  mat-raised-button color="primary" (click)="openRentCarDialog(car.Id)">Арендовать</button>
+  </div>
+</mat-card>
 </div>
-
+<button class="loadMore" *ngIf="loadMoreButton" mat-raised-button color="primary" (click)="loadMore()">Показать ещё</button>

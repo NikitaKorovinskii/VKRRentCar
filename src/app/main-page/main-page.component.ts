@@ -20,9 +20,7 @@ export class MainPageComponent implements OnInit {
 
   cars: any[] = [];
   visibleCars: any[] = [];
-  loadMoreButton: boolean = true;
-  allCars: string = 'Показать все';
-  countAllCarsButton: number = 0;
+  loadMoreButton = true;
   ngOnInit(): void {
     axios.get("http://localhost:5155/cars",
       {
@@ -37,35 +35,7 @@ export class MainPageComponent implements OnInit {
       });
   }
 
-  private loadVisibleCars(loadCount: number): void {
-    const currentCount = this.visibleCars.length;
-    const nextIndex = currentCount + loadCount;
-    const nextCars = this.cars.slice(currentCount, nextIndex);
-    if (nextCars.length === 0) {
-      this.loadMoreButton = false;
-      this.loadAll();
-    } else {
-      this.visibleCars.push(...nextCars);
-    }
-  }
 
-  loadMore() {
-    this.loadVisibleCars(3);
-  }
-
-  loadAll() {
-    this.visibleCars = this.cars;
-    this.countAllCarsButton++;
-    if (this.countAllCarsButton === 2) {
-      this.allCars = 'Показать все';
-      this.loadMoreButton = true;
-      this.countAllCarsButton = 0;
-      this.visibleCars = this.cars.slice(0, 4);
-    } else {
-      this.allCars = 'Свернуть';
-      this.loadMoreButton = false;
-    }
-  }
 
   openRentCarDialog(id: number) {
     this.dialog.open(RentCarDialogComponent, {
@@ -74,6 +44,10 @@ export class MainPageComponent implements OnInit {
       }
     });
   }
-
+  loadMore() {
+    const newLength = this.visibleCars.length + 4;
+    this.visibleCars = this.cars.slice(0, newLength);
+    this.loadMoreButton = this.visibleCars.length < this.cars.length; // Update button visibility
+  }
 }
 

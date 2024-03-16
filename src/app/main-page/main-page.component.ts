@@ -21,27 +21,43 @@ export class MainPageComponent implements OnInit {
   cars: any[] = [];
   visibleCars: any[] = [];
   loadMoreButton = true;
+  cookie: any;
 
   ngOnInit(): void {
-    axios.post('https://52-test-48.cloudbpm.ru/ServiceModel/AuthService.svc/Login', {
-      UserName: '2',
-      UserPassword: '2',
-    }, {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-        'ForceUseSession': true,
-      },
-    })
-      .then(response => {
-        // Обработка успешного ответа
-        console.log('Успешная авторизация!');
-        console.log('Ответ:', response.data);
-      })
-      .catch(error => {
-        // Обработка ошибки
-        console.error('Ошибка авторизации:', error.response.data.message);
-      });
+    // axios.post('https://52-test-48.cloudbpm.ru/0/odata/UsrCars', {
+    //   UserName: 'Supervisor',
+    //   UserPassword: 'SupervisorNikita',
+    // }, {
+    //   headers: {
+    //     'Access-Control-Allow-Origin': '*',
+    //     'Content-Type': 'application/json',
+    //     'ForceUseSession': true,
+    //   },
+    // })
+    //   .then(response => {
+    //     // Обработка успешного ответа
+    //     console.log('Успешная авторизация!');
+    //     console.log('Ответ:', response.headers['set-cookie']);
+    //
+    //   })
+    //   .catch(error => {
+    //     // Обработка ошибки
+    //     console.error('Ошибка авторизации:', error.response.data.message);
+    //   });
+    // axios.get("https://52-test-48.cloudbpm.ru/0/odata/UsrCars",
+    //   {
+    //     headers: {
+    //       BPMCSRF: "NmDOHjNn55QTBR.M22KYDu"
+    //     }
+    //   }
+    //   )
+    //   .then((response) => {
+    //     console.log(response.data)
+    //   })
+    //   .catch((err: any) => {
+    //     console.log(err)
+    //   });
+
     axios.get("http://localhost:5155/cars",
       {
       })

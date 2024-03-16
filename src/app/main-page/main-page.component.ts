@@ -25,8 +25,8 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     // axios.post('https://52-test-48.cloudbpm.ru/0/odata/UsrCars', {
-    //   UserName: 'Supervisor',
-    //   UserPassword: 'SupervisorNikita',
+    //   UserName: '2',
+    //   UserPassword: '2',
     // }, {
     //   headers: {
     //     'Access-Control-Allow-Origin': '*',

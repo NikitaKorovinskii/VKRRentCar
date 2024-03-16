@@ -21,7 +21,27 @@ export class MainPageComponent implements OnInit {
   cars: any[] = [];
   visibleCars: any[] = [];
   loadMoreButton = true;
+
   ngOnInit(): void {
+    axios.post('https://52-test-48.cloudbpm.ru/ServiceModel/AuthService.svc/Login', {
+      UserName: '2',
+      UserPassword: '2',
+    }, {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+        'ForceUseSession': true,
+      },
+    })
+      .then(response => {
+        // Обработка успешного ответа
+        console.log('Успешная авторизация!');
+        console.log('Ответ:', response.data);
+      })
+      .catch(error => {
+        // Обработка ошибки
+        console.error('Ошибка авторизации:', error.response.data.message);
+      });
     axios.get("http://localhost:5155/cars",
       {
       })
